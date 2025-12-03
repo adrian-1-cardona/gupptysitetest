@@ -1,38 +1,4 @@
-// Guppty Website - Cluely-Inspired Design
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // Cluely-style page initialization
-    initializeCluelyEffects();
-    
-    // Smooth page reveal animation
-    setTimeout(() => {
-        document.body.classList.add('page-loaded');
-        document.querySelectorAll('section').forEach((section, index) => {
-            setTimeout(() => {
-                section.classList.add('revealed');
-            }, index * 200);
-        });
-    }, 100);
-    
-    // Initialize scroll animations
-    initializeScrollAnimations();
-    
-    // Enhanced card animations with blur transitions
-    initializeCardAnimations();    // Cluely-style navigation and scroll effects
-    initializeNavigation();
-    initializeParallaxEffects();
-    
-    // Enhanced button interactions
-    initializeButtonEffects();
-    
-    // Smooth scroll between sections
-    initializeSmoothScrolling();
-    
-    // Initialize premium customer experience
-    initializePremiumExperience();
-    
-    console.log('✨ Cluely-style Guppty website loaded!');
-});
+console.log('Guppty website starting fresh...');
 
 // Cluely-style initialization function
 function initializeCluelyEffects() {
