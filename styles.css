@@ -588,11 +588,14 @@ body::before {
 .contact-social-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
 }
 
 .contact-social-links a {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.85rem;
   font-weight: 500;
   text-decoration: none;
@@ -600,6 +603,19 @@ body::before {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  transition: all 0.2s ease;
+}
+
+.contact-social-links a svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.contact-social-links a:hover svg {
+  fill: #8f46ff;
+  transform: scale(1.1);
 }
 
 .contact-social-links a::after {
