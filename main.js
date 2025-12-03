@@ -35,3 +35,21 @@ function openProject(url) {
 function showComingSoon() {
   alert('This is a demo project. Contact us to see how we can build something similar for your business!');
 }
+
+// Project grid hover effects
+document.addEventListener('DOMContentLoaded', function() {
+  const projectsGrid = document.querySelector('.projects-grid');
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  if (projectsGrid && projectCards.length > 0) {
+    projectCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        projectsGrid.classList.add('card-hovered');
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        projectsGrid.classList.remove('card-hovered');
+      });
+    });
+  }
+});
