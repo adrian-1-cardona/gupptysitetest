@@ -72,27 +72,32 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Fade-in animations on scroll
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
   };
   
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        // Add a small delay to make it feel more natural
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 100);
       }
     });
   }, observerOptions);
   
-  // Observe all fade-in elements
-  const fadeInElements = document.querySelectorAll('.fade-in');
+  // Observe all fade-in elements except hero
+  const fadeInElements = document.querySelectorAll('.fade-in:not(#hero)');
   fadeInElements.forEach(element => {
     observer.observe(element);
   });
   
-  // Make hero section visible immediately
+  // Make hero section visible with a gentle delay
   const heroSection = document.querySelector('#hero');
   if (heroSection) {
-    heroSection.classList.add('visible');
+    setTimeout(() => {
+      heroSection.classList.add('visible');
+    }, 200);
   }
 });
