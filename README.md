@@ -2,6 +2,9 @@
 
 A professional website for web development consulting services, built following modern design principles with a clean, gradient-based aesthetic.
 
+[![Open in Visual Studio Code](https://img.shields.io/badge/Open%20in-VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://vscode.dev/github/adrian-1-cardona/gupptysitetest)
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-181717?style=for-the-badge&logo=github&logoColor=white)](https://codespaces.new/adrian-1-cardona/gupptysitetest)
+
 ## 🚀 Features
 
 - **Professional Design**: Purple gradient theme with clean, modern layout
