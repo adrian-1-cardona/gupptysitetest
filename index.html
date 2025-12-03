@@ -3,14 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guppty - Professional Web Development</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Guppty - Premium Web Development & Digital Solutions | Custom Websites That Convert</title>
+    <meta name="description" content="Transform your business with Guppty's premium web development services. Custom websites, e-commerce solutions, and digital experiences that drive results. 98% client satisfaction, 24h response time.">
+    <meta name="keywords" content="web development, custom websites, e-commerce, digital solutions, responsive design, SEO optimization, web design agency">
+    <meta name="author" content="Guppty Web Development">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://guppty.com/">
+    <meta property="og:title" content="Guppty - Premium Web Development & Digital Solutions">
+    <meta property="og:description" content="Transform your business with premium web development services. Custom websites that convert visitors into customers. Trusted by 500+ businesses.">
+    <meta property="og:image" content="https://guppty.com/assets/og-image.jpg">
+    <meta property="og:site_name" content="Guppty">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://guppty.com/">
+    <meta property="twitter:title" content="Guppty - Premium Web Development & Digital Solutions">
+    <meta property="twitter:description" content="Transform your business with premium web development services. Custom websites that convert visitors into customers.">
+    <meta property="twitter:image" content="https://guppty.com/assets/twitter-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://guppty.com/">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23667eea'/><text y='70' x='50' text-anchor='middle' fill='white' font-size='60' font-family='Arial'>G</text></svg>">
+    
+    <!-- Apple PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Guppty">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><circle cx='90' cy='90' r='80' fill='%23667eea'/><text y='120' x='90' text-anchor='middle' fill='white' font-size='90' font-family='Arial'>G</text></svg>">
+    
+    <!-- Performance & Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Guppty",
+        "description": "Premium web development and digital solutions company",
+        "url": "https://guppty.com",
+        "logo": "https://guppty.com/assets/logo.svg",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "cardona.adrian.1029@gmail.com",
+            "contactType": "Customer Service"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/guppty/",
+            "https://github.com/guppty"
+        ],
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "500",
+            "bestRating": "5"
+        },
+        "offers": {
+            "@type": "Offer",
+            "category": "Web Development Services",
+            "priceRange": "$599-$999"
+        }
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to main content for screen readers -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-bolt"></i>
@@ -22,26 +108,27 @@
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <button class="nav-cta">
-                    <i class="fas fa-arrow-right"></i>
+                <button class="nav-cta" aria-label="Get started with Guppty web development services">
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     Get Started Free
                 </button>
             </div>
-            <div class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile navigation menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Main Hero Section -->
-    <section class="hero-main">
+    <main id="main-content">
+    <section class="hero-main" role="banner" aria-labelledby="hero-title">
         <div class="parallax-bg"></div>
         <div class="hero-content">
             <div class="hero-badge">
                 <i class="fas fa-star"></i>
                 <span>Trusted by 500+ Businesses</span>
             </div>
-            <h1 class="hero-title">Transform Your Business with <span class="gradient-text">Premium Web Solutions</span></h1>
+            <h1 id="hero-title" class="hero-title">Transform Your Business with <span class="gradient-text">Premium Web Solutions</span></h1>
             <p class="hero-subtitle">Custom websites that convert visitors into customers. Fast delivery, guaranteed results, lifetime support.</p>
             <div class="hero-actions">
                 <button class="hero-cta primary">
@@ -259,7 +346,10 @@
                     <p>Whether you need a simple landing page or a full website, I handle everything from design to launch. You'll work directly with me, not a team or agency.</p>
                 </div>
                 <div class="about-image fade-in-slow delay-1">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&crop=entropy&auto=format" alt="Guppty development process">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&crop=entropy&auto=format" 
+                         alt="Professional web development workspace with modern computer setup" 
+                         loading="lazy"
+                         decoding="async">
                 </div>
             </div>
         </div>
@@ -368,7 +458,10 @@
             <div class="portfolio-grid">
                 <div class="portfolio-card featured-project">
                     <div class="project-image">
-                        <img src="IMG_3882.JPG" alt="Jeff's Auto Glass Website">
+                        <img src="IMG_3882.JPG" 
+                             alt="Jeff's Auto Glass professional automotive service website homepage" 
+                             loading="lazy"
+                             decoding="async">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://adrian-1-cardona.github.io/JeffsAutoGlass/" target="_blank" class="project-link">
@@ -577,8 +670,88 @@
                         <h3>Executive Email</h3>
                     </div>
                     <p>Send your project details and receive a detailed proposal within 2 hours.</p>
-                    <button class="contact-cta email-cta">Send Priority Message</button>
+                    <button class="contact-cta email-cta" onclick="toggleContactForm()">Send Priority Message</button>
                     <small>cardona.adrian.1029@gmail.com</small>
+                </div>
+                
+                <!-- Contact Form Modal -->
+                <div id="contactModal" class="contact-modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>Send Priority Message</h3>
+                            <button class="close-modal" onclick="toggleContactForm()">&times;</button>
+                        </div>
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required aria-label="Your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required aria-label="Your email address">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" aria-label="Your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" name="company" aria-label="Your company or organization">
+                            </div>
+                            <div class="form-group">
+                                <label for="project">Project Type *</label>
+                                <select id="project" name="project" required aria-label="Type of project">
+                                    <option value="">Select project type...</option>
+                                    <option value="new-website">New Website</option>
+                                    <option value="redesign">Website Redesign</option>
+                                    <option value="ecommerce">E-commerce Store</option>
+                                    <option value="web-app">Web Application</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget" aria-label="Your budget range">
+                                    <option value="">Select budget range...</option>
+                                    <option value="under-500">Under $500</option>
+                                    <option value="500-1000">$500 - $1,000</option>
+                                    <option value="1000-2500">$1,000 - $2,500</option>
+                                    <option value="2500-5000">$2,500 - $5,000</option>
+                                    <option value="5000-plus">$5,000+</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="timeline">Preferred Timeline</label>
+                                <select id="timeline" name="timeline" aria-label="Your preferred timeline">
+                                    <option value="">Select timeline...</option>
+                                    <option value="asap">ASAP (Rush Job)</option>
+                                    <option value="1-2-weeks">1-2 Weeks</option>
+                                    <option value="1-month">Within 1 Month</option>
+                                    <option value="2-3-months">2-3 Months</option>
+                                    <option value="flexible">Flexible</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Project Details *</label>
+                                <textarea id="message" name="message" rows="5" required 
+                                         placeholder="Tell us about your project goals, target audience, specific requirements, and any features you need..."
+                                         aria-label="Your project details"></textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="submit-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                                <button type="button" class="cancel-btn" onclick="toggleContactForm()">Cancel</button>
+                            </div>
+                        </form>
+                        <div id="formSuccess" class="form-success" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Message Sent Successfully!</h4>
+                            <p>Thank you for reaching out. We'll get back to you within 2 hours with a detailed proposal.</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="contact-option">
@@ -634,7 +807,78 @@
             </div>
         </div>
     </section>
+    </main>
 
     <script src="script.js"></script>
+    
+    <!-- PWA Installation Banner -->
+    <div id="pwa-banner" class="pwa-banner" style="display: none;">
+        <div class="pwa-banner-content">
+            <div class="pwa-banner-text">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Install Guppty for quick access</span>
+            </div>
+            <div class="pwa-banner-actions">
+                <button id="pwa-install-btn" class="pwa-install-btn">Install</button>
+                <button id="pwa-dismiss-btn" class="pwa-dismiss-btn">&times;</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+        
+        // PWA Install Prompt
+        let deferredPrompt;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show install banner
+            const banner = document.getElementById('pwa-banner');
+            const installBtn = document.getElementById('pwa-install-btn');
+            const dismissBtn = document.getElementById('pwa-dismiss-btn');
+            
+            // Check if user previously dismissed
+            if (!localStorage.getItem('pwa-dismissed')) {
+                banner.style.display = 'block';
+                setTimeout(() => banner.classList.add('show'), 100);
+            }
+            
+            installBtn.addEventListener('click', () => {
+                banner.style.display = 'none';
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+            
+            dismissBtn.addEventListener('click', () => {
+                banner.style.display = 'none';
+                localStorage.setItem('pwa-dismissed', 'true');
+            });
+        });
+        
+        // Track PWA usage
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('Guppty PWA was installed');
+        });
+    </script>
 </body>
 </html>

@@ -1831,22 +1831,536 @@ section.in-view::before {
     }
 }
 
-/* Accessibility */
+/* Screen reader only content */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Keyboard navigation styles */
+.keyboard-navigation *:focus {
+    outline: 3px solid var(--primary-blue) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .premium-card,
+    .service-card,
+    .pricing-card,
+    .portfolio-card {
+        border: 2px solid var(--neutral-900) !important;
+    }
+    
+    .hero-cta,
+    .nav-cta,
+    .pricing-cta {
+        border: 2px solid var(--neutral-900) !important;
+    }
+}
+
+/* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .parallax-bg {
+        transform: none !important;
     }
 }
 
-/* Focus states */
+/* PWA Install Banner */
+.pwa-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--gradient-primary);
+    color: white;
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pwa-banner.show {
+    transform: translateY(0);
+}
+
+.pwa-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pwa-banner-text {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.pwa-banner-text i {
+    font-size: 1.2rem;
+}
+
+.pwa-banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pwa-install-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.pwa-install-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.pwa-dismiss-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.pwa-dismiss-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #ffffff;
+        --bg-color: #0f172a;
+        --card-bg: #1e293b;
+    }
+    
+    body {
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+    
+    .premium-card,
+    .service-card,
+    .pricing-card {
+        background: var(--card-bg);
+        color: var(--text-color);
+    }
+}
+
+/* Advanced Animation Classes */
+.feature-card,
+.service-card,
+.pricing-card,
+.portfolio-card,
+.premium-benefit-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.feature-card.animate-in,
+.service-card.animate-in,
+.pricing-card.animate-in,
+.portfolio-card.animate-in,
+.premium-benefit-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition-property: transform, opacity, box-shadow, background, border-color;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Enhanced hover effects with GPU acceleration */
+.premium-card,
+.service-card,
+.pricing-card,
+.portfolio-card {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Loading skeleton for images */
+img[loading="lazy"] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+img[loading="lazy"].loaded {
+    background: none;
+    animation: none;
+}
+
+/* Optimized animations for better performance */
+@keyframes optimizedFadeIn {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.fade-in-optimized {
+    animation: optimizedFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* PWA Banner Mobile */
+@media (max-width: 768px) {
+    .pwa-banner-content {
+        padding: 12px 16px;
+    }
+    
+    .pwa-banner-text span {
+        font-size: 0.9rem;
+    }
+    
+    .pwa-install-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Optimize animations for mobile */
+    .feature-card,
+    .service-card,
+    .pricing-card,
+    .portfolio-card,
+    .premium-benefit-card {
+        transition-duration: 0.4s;
+    }
+}
+
+/* Print styles */
+@media print {
+    .nav,
+    .pwa-banner,
+    .contact-modal {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .hero-main,
+    .features,
+    .services,
+    .pricing,
+    .portfolio,
+    .contact {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* Skip to main content link */
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-blue);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 9999;
+    font-weight: 600;
+    transition: top 0.3s ease;
+}
+
+.skip-to-main:focus {
+    top: 6px;
+}
+
+/* Enhanced Focus states */
 .nav-cta:focus,
 .hero-cta:focus,
 .pricing-cta:focus,
-.contact-button:focus {
-    outline: 2px solid #10b981;
+.contact-button:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus,
+a:focus {
+    outline: 3px solid var(--primary-blue);
     outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+/* Contact Modal Styles */
+.contact-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.7) translateY(50px);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.contact-modal.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 40px 0;
+    border-bottom: 1px solid var(--neutral-200);
+    margin-bottom: 32px;
+}
+
+.modal-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--neutral-500);
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background: var(--neutral-100);
+    color: var(--neutral-700);
+}
+
+.contact-form {
+    padding: 0 40px 40px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--neutral-700);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--neutral-200);
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--neutral-50);
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-blue);
+    background: white;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+.submit-btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cancel-btn {
+    background: transparent;
+    color: var(--neutral-600);
+    border: 2px solid var(--neutral-200);
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background: var(--neutral-100);
+    border-color: var(--neutral-300);
+}
+
+.form-success {
+    padding: 40px;
+    text-align: center;
+}
+
+.form-success i {
+    font-size: 3rem;
+    color: #10b981;
+    margin-bottom: 20px;
+}
+
+.form-success h4 {
+    font-size: 1.5rem;
+    color: var(--neutral-900);
+    margin-bottom: 12px;
+}
+
+.form-success p {
+    color: var(--neutral-600);
+    font-size: 1.1rem;
+}
+
+/* Mobile menu accessibility */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--neutral-700);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--neutral-100);
+}
+
+/* Improved mobile responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .modal-header,
+    .contact-form {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .submit-btn,
+    .cancel-btn {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Premium Section Styles */
