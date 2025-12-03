@@ -26,3 +26,12 @@ const yearSpan = document.getElementById('year');
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
+
+// Project demo functions
+function openProject(url) {
+  window.open(url, '_blank');
+}
+
+function showComingSoon() {
+  alert('This is a demo project. Contact us to see how we can build something similar for your business!');
+}
