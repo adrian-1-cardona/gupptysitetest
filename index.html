@@ -146,11 +146,30 @@
 
         /* Finance Hero Section */
         .finance-hero {
-            background: linear-gradient(135deg, #ff8c00 0%, #4f46e5 50%, #1e40af 100%);
+            background: linear-gradient(135deg, #ff8c00 0%, #ff6b35 30%, #4f46e5 70%, #1e40af 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 2rem;
+            position: relative;
+        }
+
+        .finance-logo {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .finance-logo::before {
+            content: "💎";
+            font-size: 1.2rem;
         }
 
         .finance-content {
@@ -165,7 +184,7 @@
 
         .finance-text h2 {
             font-size: 3.5rem;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.1;
             color: #fff;
         }
@@ -178,48 +197,87 @@
         }
 
         .woman-image {
-            width: 450px;
-            height: 300px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300"><rect fill="%23ff6b35" width="450" height="300" rx="20"/><circle cx="150" cy="120" r="40" fill="%23fff" opacity="0.3"/><rect x="200" y="80" width="200" height="140" fill="%23fff" opacity="0.2" rx="10"/></svg>') center/cover;
+            width: 500px;
+            height: 350px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23ff8c00"/><stop offset="50%" style="stop-color:%23ff6b35"/><stop offset="100%" style="stop-color:%234f46e5"/></linearGradient></defs><rect fill="url(%23bg)" width="500" height="350" rx="20"/><circle cx="350" cy="150" r="60" fill="%23fff" opacity="0.1"/><rect x="280" y="100" width="140" height="100" fill="%23000" opacity="0.1" rx="10"/><text x="350" y="160" text-anchor="middle" fill="%23fff" font-family="Arial" font-size="12">Woman with phone</text></svg>') center/cover;
             border-radius: 20px;
             position: relative;
             overflow: hidden;
         }
 
-        .phone-overlay {
+        .phone-stack {
             position: absolute;
-            bottom: 30px;
-            right: 30px;
-            width: 100px;
-            height: 180px;
+            bottom: 40px;
+            right: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: -10px;
+        }
+
+        .phone-device {
+            width: 120px;
+            height: 200px;
             background: #1a1a1a;
-            border-radius: 12px;
-            padding: 6px;
+            border-radius: 15px;
+            padding: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform-origin: center;
+        }
+
+        .phone-device:nth-child(1) {
+            transform: rotate(-5deg) translateY(10px);
+            z-index: 3;
+        }
+
+        .phone-device:nth-child(2) {
+            transform: rotate(5deg) translateY(-30px) translateX(20px);
+            z-index: 2;
+        }
+
+        .phone-device:nth-child(3) {
+            transform: rotate(-2deg) translateY(-70px) translateX(-10px);
+            z-index: 1;
         }
 
         .phone-ui {
             width: 100%;
             height: 100%;
             background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-            border-radius: 8px;
-            padding: 0.6rem;
+            border-radius: 10px;
+            padding: 0.8rem;
             color: white;
+            display: flex;
+            flex-direction: column;
         }
 
         .ui-header {
-            font-size: 0.6rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            text-align: left;
-            margin-bottom: 0.6rem;
+            text-align: center;
+            margin-bottom: 0.8rem;
         }
 
-        .balance-card {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            padding: 0.6rem;
-            text-align: left;
+        .ui-balance {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 0.8rem;
+            text-align: center;
             font-weight: 700;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ui-chart {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+        }
+
+        .ui-stats {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.6rem;
         }
 
         /* Contact Section */
@@ -537,7 +595,50 @@
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
+    <!-- Finance Hero Section -->
+    <section class="finance-hero">
+        <div class="finance-logo">
+            My Finance
+        </div>
+        <div class="finance-content">
+            <div class="finance-text">
+                <h2>Track, plan, and achieve your financial goals</h2>
+            </div>
+            <div class="finance-image">
+                <div class="woman-image">
+                    <div class="phone-stack">
+                        <div class="phone-device">
+                            <div class="phone-ui">
+                                <div class="ui-header">My Finance</div>
+                                <div class="ui-balance">$2,945</div>
+                                <div class="ui-chart"></div>
+                                <div class="ui-stats">
+                                    <span>Income</span>
+                                    <span>Expense</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phone-device">
+                            <div class="phone-ui">
+                                <div class="ui-header">Dashboard</div>
+                                <div class="ui-balance">Analytics</div>
+                                <div class="ui-chart"></div>
+                            </div>
+                        </div>
+                        <div class="phone-device">
+                            <div class="phone-ui">
+                                <div class="ui-header">Reports</div>
+                                <div class="ui-chart"></div>
+                                <div class="ui-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is My Finance Section -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -563,27 +664,6 @@
                     <div class="step-indicator">Step1</div>
                 </div>
                 <div class="drag-tip">Tip: Drag and drop your image over the mockup.</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Finance Hero Section -->
-    <section class="finance-hero">
-        <div class="finance-content">
-            <div class="finance-text">
-                <h2>Track, plan, and achieve your financial goals</h2>
-            </div>
-            <div class="finance-image">
-                <div class="woman-image">
-                    <div class="phone-overlay">
-                        <div class="phone-ui">
-                            <div class="ui-header">My Finance</div>
-                            <div class="ui-body">
-                                <div class="balance-card">$2,945</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
