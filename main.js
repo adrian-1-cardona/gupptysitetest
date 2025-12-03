@@ -69,4 +69,30 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+  
+  // Fade-in animations on scroll
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all fade-in elements
+  const fadeInElements = document.querySelectorAll('.fade-in');
+  fadeInElements.forEach(element => {
+    observer.observe(element);
+  });
+  
+  // Make hero section visible immediately
+  const heroSection = document.querySelector('#hero');
+  if (heroSection) {
+    heroSection.classList.add('visible');
+  }
 });
