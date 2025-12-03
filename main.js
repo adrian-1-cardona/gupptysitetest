@@ -52,4 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+  
+  
+  // Feature grid hover effects
+  const featuresGrid = document.querySelector('.features-grid');
+  const featureItems = document.querySelectorAll('.feature-item');
+  
+  if (featuresGrid && featureItems.length > 0) {
+    featureItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        featuresGrid.classList.add('item-hovered');
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        featuresGrid.classList.remove('item-hovered');
+      });
+    });
+  }
 });
