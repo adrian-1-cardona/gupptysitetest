@@ -1,3 +1,19 @@
+// Typing animation
+function typeText(element, text, speed = 50) {
+  let index = 0;
+  element.textContent = '';
+  
+  const type = () => {
+    if (index < text.length) {
+      element.textContent += text[index];
+      index++;
+      setTimeout(type, speed);
+    }
+  };
+  
+  type();
+}
+
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -98,6 +114,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (heroSection) {
     setTimeout(() => {
       heroSection.classList.add('visible');
+      // Start typing animation after hero is visible
+      const typingElement = document.querySelector('.typing-text');
+      if (typingElement) {
+        typeText(typingElement, 'We design, launch, and maintain your website for life.', 50);
+      }
     }, 200);
   }
 });
