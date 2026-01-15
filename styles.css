@@ -364,6 +364,7 @@ body::before {
   font-size: 0.95rem;
 }
 
+/* 
 .about-media {
   border-radius: var(--radius-card);
   border: 1px dashed rgba(255, 255, 255, 0.35);
@@ -378,6 +379,7 @@ body::before {
     radial-gradient(circle at 90% 100%, #8f46ff33, transparent 55%),
     rgba(0, 0, 0, 0.8);
 }
+*/
 
 /* FEATURES */
 
